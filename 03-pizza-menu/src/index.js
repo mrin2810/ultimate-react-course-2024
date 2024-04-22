@@ -57,8 +57,6 @@ function App() {
   );
 }
 
-// First Component
-
 function Pizza(props) {
   return (
     <div className="pizza">
@@ -73,11 +71,6 @@ function Pizza(props) {
 }
 
 function Header() {
-  // const h1Style = {
-  //   color: "red",
-  //   fontSize: "48px",
-  //   textTransform: "uppercase",
-  // };
   return (
     <header className="header">
       <h1>Fast React Pizza Co.</h1>
@@ -112,11 +105,6 @@ function Footer() {
 
   const isOpen = hour >= openHour && hour <= closeHour;
   console.log(isOpen);
-  // if () {
-  //   alert("We're currently open!");
-  // } else {
-  //   alert("Sorry we're closed!");
-  // }
   return (
     <footer className="footer">
       {new Date().toLocaleTimeString()}. We're currently open!

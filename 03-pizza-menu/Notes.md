@@ -13,3 +13,20 @@
 - This conversion is necessary, as browsers do not understand JSX, they only understand HTML.
 - JSX makes it readable as well.
 - It is Declarative syntax, meaning, we only tell what to render, but no imperative syntax(HOW) to achieve it!
+
+# Props
+
+- We use props to communicate between parent and child components.
+- We can pass anything into props, single value, array, function, reactcomponents etc.
+  Note: Props are READ-ONLY
+- We can only upadate State but not Props.
+- Props can be updated by Parent Component.
+- Components have to be pure, in terms of state and props.
+- React uses one way data flow, means, we can pass data from parent to child components only, not from child to parent.
+  : Angular, has 2-way data flow
+
+Why?
+
+- Makes applications predictable and easier to understand
+- Easier to debug
+- is more efficient
