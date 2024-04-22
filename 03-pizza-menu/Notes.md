@@ -45,3 +45,7 @@ Why?
 
 - we can have simple if statements and we can return different things from the data.
 - Useful when entire components are returned conditionally
+
+# Conditionally set text and classes for components.
+
+- Practical
