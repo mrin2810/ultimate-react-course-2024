@@ -30,3 +30,13 @@ Why?
 - Makes applications predictable and easier to understand
 - Easier to debug
 - is more efficient
+
+# Conditional Renderering using &&
+
+- We created an isOpen variable, and it tells us if the restaurant is open or not.
+- We render some piece of UI, based on a certain condition
+- React will render any values other than true or false.
+
+# Conditional Rendering using ternary operator
+
+- Instead of && we use ternery operator, (condition) ? (if true) : (else)
