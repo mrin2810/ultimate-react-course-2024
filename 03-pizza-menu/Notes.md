@@ -40,3 +40,8 @@ Why?
 # Conditional Rendering using ternary operator
 
 - Instead of && we use ternery operator, (condition) ? (if true) : (else)
+
+# Conditional Rendering using multiple returns
+
+- we can have simple if statements and we can return different things from the data.
+- Useful when entire components are returned conditionally

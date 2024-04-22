@@ -58,6 +58,9 @@ function App() {
 }
 
 function Pizza({ pizzaObj }) {
+  if (pizzaObj.soldOut) {
+    return null;
+  }
   return (
     <li className="pizza">
       <img src={pizzaObj.photoName} alt={pizzaObj.name} />
