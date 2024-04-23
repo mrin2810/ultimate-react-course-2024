@@ -17,4 +17,6 @@
   - useState Hook willbe used to create a react state.
     - useState can be called in react component
 
-- How to think about states in React?
+- DevTools for React
+  - It is very handy to manage the state of the component.
+  - We can see the Component Tree
