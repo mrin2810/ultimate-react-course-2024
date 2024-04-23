@@ -12,5 +12,9 @@
   - Persists local variables between renders.
 
 - How to use state in practice?
+
   - We will use it in practice.
+  - useState Hook willbe used to create a react state.
+    - useState can be called in react component
+
 - How to think about states in React?
