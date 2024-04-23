@@ -48,3 +48,5 @@
 - To change how the component looks, you should change the state, this happens in an event handler.
 - When building a component, you should imagine it's view as reflection of state changing over time.
 - For data that should not trigger rerenders, we should NOT use state.
+
+### Review the vanilla.html file
