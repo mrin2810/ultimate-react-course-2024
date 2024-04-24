@@ -21,9 +21,17 @@ function Logo() {
 
 function Form() {
   return (
-    <div className="add-form">
+    <form className="add-form">
       <h3>What do you need for you 😍 trip?</h3>
-    </div>
+      <select>
+        {Array.from({ length: 20 }, (_, num) => num + 1).map((num) => (
+          <option value={num} key={num}>
+            {num}
+          </option>
+        ))}
+      </select>
+      <input type="text" placeholder="Item..."></input>
+    </form>
   );
 }
 
