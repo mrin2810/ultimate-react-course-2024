@@ -27,7 +27,20 @@ function Form() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(event);
+
+    if (!description) return;
+
+    const newItem = {
+      description,
+      quantity,
+      package: false,
+      id: Date.now(),
+    };
+
+    console.log(newItem);
+
+    setDiscription("");
+    setQuantity(1);
   }
 
   return (

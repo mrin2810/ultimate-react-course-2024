@@ -11,3 +11,4 @@
 3. listen for the change event using onChange prop (e.g. onChange={e => setDescription(e.target.value)})
 
 - These steps will let React control the form element instead of DOM.
+- Make sure that if you are assigning numbers they value is converted to number, as the e.target.value will be string most of the times.
