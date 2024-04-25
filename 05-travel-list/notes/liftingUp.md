@@ -16,3 +16,5 @@
 - Use filter method, to remove items based on condition.
 - We now pass the function into App -> PassingList -> Item.
 - Then we call this method, by passing the id, onClick of the button. (Make sure you pass the correct id)
+
+# Check and uncheck items
