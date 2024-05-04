@@ -93,5 +93,3 @@ With component composition we can:
 
 1. Create highly reusable and flexible components
 2. Fix prop drilling (great for layouts)
-
-## Pasing component as props alternative to children
