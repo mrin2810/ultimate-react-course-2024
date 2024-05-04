@@ -1,5 +1,7 @@
 # Thinking IN React: Components, Composition, and Reusability
 
+## How to split components
+
 ### Component size matters
 
 We should not go for too small or too large components.
@@ -52,3 +54,24 @@ co-locate related components inside the same file/folder (when working in indust
 It's completely normal that an app has components of many different sizes, including very small and huge one's.
 
 We ofcourse need some small components which are less complex and highly reusable. And a few huge components, which are not reusable (NOT a problem)
+
+## Component Categories
+
+1. Stateless/Presentational Components:
+
+- They do not have states, generally recieve props, and present them.
+- Usually small and reusable.
+- E.g. Logo, NumResults, Movie, WatchedSummary, WatchedMoviesList, WatchedMovie
+
+2. Stateful Components:
+
+- They have state.
+- Can still be Reused.
+- E.g. Search, ListBox, MovieList, WatchedBox
+
+3. Structural Components:
+
+- They are usually: "Pages", "Layouts", or "Screens" of the app.
+- Result of composition
+- Can be large and non reusable, but they dont have to be.
+- E.g. App, NavBar, Main,
