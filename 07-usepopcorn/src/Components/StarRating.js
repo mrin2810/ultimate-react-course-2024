@@ -96,27 +96,40 @@ EMPTY STAR
 
 export default function StarRating({ maxRating = 5 }) {
   const [rating, setRating] = useState(0);
+  const [tempRating, setTempRating] = useState(0);
 
   function handleRating(rating) {
     setRating(rating);
   }
+
   return (
     <div style={containerStyle}>
       <div style={starContainerStyle}>
         {Array.from({ length: maxRating }, (_, i) => (
-          <Star full={i < rating} onRate={() => handleRating(i + 1)} key={i}>
+          <Star
+            full={tempRating ? i < tempRating : i < rating}
+            onRate={() => handleRating(i + 1)}
+            key={i}
+            onHoverIn={() => setTempRating(i + 1)}
+            onHoverOut={() => setTempRating(0)}
+          >
             S{i + 1}
           </Star>
         ))}
       </div>
-      <p style={textStyle}>{rating || ""}</p>
+      <p style={textStyle}>{tempRating || rating || ""}</p>
     </div>
   );
 }
 
-function Star({ onRate, full }) {
+function Star({ onRate, full, onHoverIn, onHoverOut }) {
   return (
-    <span style={starStyle} onClick={onRate}>
+    <span
+      style={starStyle}
+      onClick={onRate}
+      onMouseEnter={onHoverIn}
+      onMouseLeave={onHoverOut}
+    >
       {full ? <FilledStar /> : <EmptyStar />}
     </span>
   );
