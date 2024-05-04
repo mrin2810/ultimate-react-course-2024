@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Thinking IN React: Components, Composition, and Reusability
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Component size matters
 
-## Available Scripts
+We should not go for too small or too large components.
+Large component:
 
-In the project directory, you can run:
+- Either a component has too much going on
+- it recieves too many components
+- Hard to reuse
 
-### `npm start`
+Small component:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 100s of mini-components
+- confusing codebase
+- too abstract
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### How to split UI into Components?
 
-### `npm test`
+4 Criteria:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Logical Separation of content/layout
+- Reusability
+- Responsibilities/Complexity
+- Personal Coding Style
 
-### `npm run build`
+Thumb Rule: "When in doubt, start with a relatively big component, then split it into smaller components as it becomes necessary"
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Framework: When to create a new component?
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Does the component contain pieces of content or layout that don't belong together?
+- Is it possible to reuse part of the component?
+- Do you want or need to reuse it?
+- Is the component doing too many different things?
+- Does the component rely on too many props?
+- Does the component have too many pieces of state or effects?
+- Is the code, including JSX, too complex or confusing?
+- Do you prefer smaller function/components?
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### If the answer is yes to any of the above questions: You might need a new component.
 
-### `npm run eject`
+### Guidelines:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Adding a new component creates a new abstraction. Abstractions have a cost, because, more abstractions require more mental energy to switch back and forth between components. So try not to create new components too early.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Name a component according to what it is does or what it displays. Don't be afraid of using long component names.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Never declare a new component inside another component!
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+co-locate related components inside the same file/folder (when working in industry).
 
-## Learn More
+It's completely normal that an app has components of many different sizes, including very small and huge one's.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+We ofcourse need some small components which are less complex and highly reusable. And a few huge components, which are not reusable (NOT a problem)
