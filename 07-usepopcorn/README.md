@@ -75,3 +75,21 @@ We ofcourse need some small components which are less complex and highly reusabl
 - Result of composition
 - Can be large and non reusable, but they dont have to be.
 - E.g. App, NavBar, Main,
+
+## What is Component Composition?
+
+- "Using" A component and "Component Composition"
+- "Using" A component: We are using components inside other components directly.
+- "Success is inside modal, and we are not ale to resuse the Modal for displaying some other message.
+  ![UsingAComponent.png](readme/UsingAComponent.png)
+- "Component Composition": We no longer have the component inside the big component. We are now actually, passing it as children and using the children prop.
+- "Now we can reuse the modal component, so that we can replace the message displayed, by changing the children that we pass.
+
+  ![Composition](readme/Composition.png)
+
+Combining different components using the children prop (or explicitly defined props)
+
+With component composition we can:
+
+1. Create highly reusable and flexible components
+2. Fix prop drilling (great for layouts)
