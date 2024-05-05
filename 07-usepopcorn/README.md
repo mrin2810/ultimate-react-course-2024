@@ -107,3 +107,9 @@ Too little: Not flexible, Might not be reusable
 Too many: Way too hard to use, exposing too much complexiy, hard to code, and provide default values for the props. ({ propName = defaultValue })
 
 - Strike the right balance between too little and too many props.
+
+## PropTypes
+
+- With propTypes we can specify the type of value for the consumer to specify.
+- Checking each type of the prop. Easy way is to use TypeScript instead of JavaScript.
+- PropType is also one way to do this.
