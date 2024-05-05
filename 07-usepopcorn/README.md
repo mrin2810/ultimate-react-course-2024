@@ -93,3 +93,17 @@ With component composition we can:
 
 1. Create highly reusable and flexible components
 2. Fix prop drilling (great for layouts)
+
+## Props as an API
+
+- Component Creater and Consumers can be different developers.
+- Creater is builder of the component.
+- Consumer is someone who uses it in their code.
+- We can think that Props can be compared to public API.
+- When deciding props, we want to be thoughtful.
+- We want to find a good balance between, how many props should be allowed.
+
+Too little: Not flexible, Might not be reusable
+Too many: Way too hard to use, exposing too much complexiy, hard to code, and provide default values for the props. ({ propName = defaultValue })
+
+- Strike the right balance between too little and too many props.
