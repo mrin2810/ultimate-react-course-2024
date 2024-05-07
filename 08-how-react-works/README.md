@@ -127,3 +127,26 @@ We can use ReactNative to write to native applications.
 We can create videos using Remotion, and we can do many other things.
 
 ![alt text](readme/summary.png)
+
+## 4. How Diffing Works?
+
+This mechanism is based on 2 fundamental assumptions:
+
+1. 2 elements of different types will produce different trees.
+2. Elements with stable keys will stay same across renders.
+
+Case:
+
+1. Same position Different Element
+
+   Element changed the position in the TREE.
+   React assumes the entire subtree is not valid
+   Old components are destroyed and removed from DOM, including state.
+   Tree might be rebuilt if children stayed the same(state is reset).
+
+2. Same Position Same Element
+
+   Elemnt does not move nor does it change in the TREE.
+   Simply Kept in the DOM along with the component state.
+   If the props change, then the object is mutated instead of destroying or removed from the DOM.
+   So, we keep the state as well.
