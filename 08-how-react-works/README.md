@@ -1,0 +1,50 @@
+# How React works behind the scene?
+
+## 1. [Components](#components), [Instances](#instances) and [Elements](#react-elements) (Popular Interview Question)
+
+### Components:
+
+<a name="components"></a>
+
+- It is nothing but, description of a piece of UI
+- A component is function that Returns React elements
+- It is a "Blueprint" or "Templates", which is used to create multiple instances.
+- e.g. Tab function
+
+### Instances:
+
+<a name="instances"></a>
+
+- Instances are created when we use these components
+- e.g in App when we see <Tab .../> It is an instance.
+- Actual physical manifestation of a component.
+- More like Java Class and Instances.
+- Instance can born, live and die (lifecycle)
+- Returns one or more React "[Elements](#react-elements)"
+  We use these 2 terms interchangably.
+
+### React Elements:
+
+<a name="react-elements"></a>
+
+- JSX is converted to React.createElement() function calls.
+- A react element is the result of these function calls.
+- Information necessary for DOM elements for current instance is stored in the element.
+- Elements insert [DOM elements](#dom-elements) in the DOM.
+
+### DOM ELements (HTML):
+
+<a name="dom-elements"></a>
+
+- These are the final elements that are rendered to the DOM.
+- Actual visual representation of the component instance in the browser.
+
+#### Experiment:
+
+1. if we write console.log(<DifferentContent test={23} />); this line in the App.j
+2. we will be able to see how a component instace stores information to create a HTML element.
+
+Why we don't write DifferentContent(),
+
+- React doesn't see this as a component instance, but as a raw output.
+- We need to call it <DifferentContent /> for it to see as React Component.
