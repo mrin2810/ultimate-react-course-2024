@@ -48,3 +48,80 @@ Why we don't write DifferentContent(),
 
 - React doesn't see this as a component instance, but as a raw output.
 - We need to call it <DifferentContent /> for it to see as React Component.
+
+## 2. How Rendering Works: Overview
+
+![How DOM is created](readme/image.png)
+
+### Overview: How components are displayed on the screen.
+
+- When a render is triggered, when a state changes,
+- Next phase is Render phase: React calls the component functions and figures out how dom should be updated.
+- Rendering only happens inside react, internally. It does not produce visual changes.
+- Next is Commit phase, new elements can be added existing elements are updated or deleted.
+- Browser paint phase: which actually does the changes in the display that we see.
+
+![phases in react rendering](readme/image2.png)
+
+### How render are Triggered?
+
+Two ways:
+
+1. Initial Render: Start of the Application.
+2. State is updated in one or more component instances (re-render).
+
+Re-rendering rerenders the entire application, but, on the browser side, we can only see re-render of components that have been updated.
+
+In practice it looks like only the react only re-renders the component where the state update has happened, but that's not how it works behind the scenes.
+
+A render is not triggered immediately, but scheduled for when the JS engine has some
+free time". There is also, batching of multiple setState calls in event handlers.
+
+## 3. How Rendering Works: The Render Phase
+
+![mechanics of state in react](readme/image3.png)
+
+### The render phase:
+
+At the beginning, React goes through the react component tree and calls the component function.
+Creates React element tree (Virtual DOM)
+
+- Virtual Dom: Component Tree => React Element Tree (Virtual DOM)
+- It is cheap and fast to create Virtual DOM (since its juts a JS object)
+- Nothing to do with shadow DOM
+
+State Update in component tree will trigger the re-render
+
+![alt text](readme/image4.png)
+
+Reconciliation + Diffing happens in Current Fibre Tree (before state update) and Updated Fibre Tree.
+
+Why we need all of these?
+
+- Creating Virtual DOM is cheap and fast because it is JS object, but writing to DOM is not cheap and it is slow.
+- Usually small part of the DOM is changed and needs to be updated.
+
+![alt text](readme/image5.png)
+
+![alt text](readme/image6.png)
+
+![alt text](readme/image7.png)
+
+![alt text](readme/renderPhase.png)
+
+Render phase is implemented by React library.
+
+### The commit phase:
+
+React writes to DOM: insertion, deletion, updates
+Commit phase is synchronous: DOM is updated in one go.
+After Commit phase completes, the workInProgress fibre tree becomes the current tree, for the next render cycle.
+This is done by ReactDOM library.
+
+### Browser Paint:
+
+Updated UI on the screen (more on browser side and not on React side)
+![alt text](readme/image8.png)
+
+We can use ReactNative to write to native applications.
+We can create videos using Remotion, and we can do many other things.
