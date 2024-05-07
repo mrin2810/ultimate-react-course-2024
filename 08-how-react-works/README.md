@@ -125,3 +125,5 @@ Updated UI on the screen (more on browser side and not on React side)
 
 We can use ReactNative to write to native applications.
 We can create videos using Remotion, and we can do many other things.
+
+![alt text](readme/summary.png)
