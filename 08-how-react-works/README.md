@@ -179,3 +179,69 @@ Case:
 - when we have key prop. We can tell the dom to destroy and create a new element.
 
 ![Change Keys](readme/image10.png)
+
+## 6. Rules for Render Logic
+
+### Render Logic:
+
+There are 2 types of logic in React that we can write
+
+1. Render Logic and 2. Event Handler Functions
+   Render logic
+
+- Code lives in the top level, of the component function
+- participates in describing how the component view looks like
+- Executed every time the component renders
+
+Event Handler Functions
+
+- Executed as a consequence of the event that the handler is listening for (change event in this example)
+- Code that actually does things: update state, perform HTTP request, page navigation, read an input field etc.
+
+#### What do we mean by Pure Components?
+
+- Side effect: Dependency on or modification of any data outside the function scope. Interaction with the outside world. E.g. mutate external variables, http requests, writing to DOM.
+
+- Pure Function: a function that has no side effects
+- does not change any variables outside the scope
+- given the same input, a pure function always returns the same output, (predictable)
+
+Side effects are not bad, A program can only be useful if it has some interation with outside world.!!!
+
+### Rules for Render Logic:
+
+There is just one big rule: The functions have to be pure when it comes to render logic: given that the same props will provide the same component.
+
+Render logic must provide no side effects: No interaction with the outside world is allowed. So in render logic:
+
+- Do not perform network requests (API calls)
+- Do not start timers
+- Do not directly work with DOM API
+- Do not mutate objects and variables outside of the function (reason for not allowing to modify the props)
+- Do not update state (or refs): this will create infinite loop!
+
+How do we then actually fetch data?
+
+- This is only for render logic, so, we have other provisions for side effects.
+- Registering side effect by using useEffect()
+
+## 7. State Update Batching
+
+We know that react batches state update together to reduce number of re-renders.
+
+- Renders are not triggered immediately, but scheduled when JS engine has free time.
+- there is also, batching of multiple setState calls in event handlers.
+
+![alt text](readme/image11.png)
+
+### Event handler function:
+
+What we would think?
+![alt text](readme/image12.png)
+
+What actually happens?
+![alt text](readme/image13.png)
+
+![alt text](readme/image14.png)
+
+![alt text](readme/image15.png)
