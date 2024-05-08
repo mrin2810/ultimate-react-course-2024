@@ -151,4 +151,31 @@ Case:
    If the props change, then the object is mutated instead of destroying or removed from the DOM.
    So, we keep the state as well.
 
-## 5. How diffing works in practice?
+## 5. The Key Prop
+
+- Special prop that we use to tell the diffing algorithm that an element is unique.
+- Allows React to distinguish between multiple instances of the same coomponent.
+- When key stays the same across renders, the element will be kept in the DOM (even if the position in the tree changes)
+
+1. Using keys in lists
+
+- When key chnages in between renders, it will destroy the element even if the position is same.
+
+### Keys in Lists [Stable Key]
+
+1. No Keys
+
+- We have same elements at different position, because the elements do not have keys, they will be destroyed and added again, if we add a new element.
+
+2. With Keys
+
+- Even though we have same element in different position, they will be kept in the DOM. And the state will be retained.
+  ![Stable Keys](readme/image9.png)
+
+### Key prop to reset the State [Change Key]
+
+- React allows us to build apps faster, State will be retained if we change one prop (question in the example).
+- Answer will be retained, which does not make sense. We need to reset the question.
+- when we have key prop. We can tell the dom to destroy and create a new element.
+
+![Change Keys](readme/image10.png)
