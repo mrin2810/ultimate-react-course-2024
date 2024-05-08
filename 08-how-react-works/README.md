@@ -150,3 +150,5 @@ Case:
    Simply Kept in the DOM along with the component state.
    If the props change, then the object is mutated instead of destroying or removed from the DOM.
    So, we keep the state as well.
+
+## 5. How diffing works in practice?
