@@ -245,3 +245,37 @@ What actually happens?
 ![alt text](readme/image14.png)
 
 ![alt text](readme/image15.png)
+
+## 8. How events work in React
+
+### Refresher: Event propagation and delegation
+
+![alt text](readme/image16.png)
+
+- By default, event handlers listens to events on the target and during the bubbling phase
+- we can prevent bubbling with e.stopPropagation()
+
+Event Delegation:
+
+- Handling events for multiple elements centrally in one single parent element.
+- Better for performance and memory, as it needs only one handler function.
+- Add handler to parent. (.options)
+- Check for target Element (e.target)
+- If target is one of the <button>s, handle the event.
+
+Very common in vanilla JS apps, but not so much in React apps.
+
+## 9. Libraries v/s Frameworks and The React Ecosystems
+
+![alt text](readme/analogy.png)
+![alt text](readme/forReact.png)
+
+![alt text](readme/indepth.png)
+
+![alt text](readme/react3rdParty.png)
+
+## Practical Summary
+
+![alt text](readme/sum1.png)
+![alt text](readme/sum2.png)
+![alt text](readme/sum3.png)
